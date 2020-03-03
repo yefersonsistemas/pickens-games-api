@@ -1,0 +1,44 @@
+<div class="message" *ngIf="this.hangService.endGameStatus$.value!=this.hangService.RUNNING_STATUS">
+
+    <img class="picture" [src]="pictureURL" />
+    
+    <!-- boton se que muestra cuando adivinas o no, la palabra -->
+
+    <!-- <div [ngClass]="'finishMessage '+statusClass">
+    <span *ngFor="let word of statusWords" class="messageWord"> {{word}}  </span>
+    </div>
+
+    <button class="resultButton" (click)="hangService.startGame()">
+    <span class="buttonText">Siguiente</span>
+    </button> -->
+
+    <!-- If para mostrar botones si adivino la palabra -->
+
+    <ng-container *ngIf="this.hangService.endGameStatus$.value==this.hangService.SUCCESS_STATUS; else elseTemplate">
+
+        <div [ngClass]="'finishMessage '+statusClass">
+            <span *ngFor="let word of statusWords" class="messageWord">{{word}}</span>
+        </div>
+        
+        <button class="resultButton" (click)="hangService.startGame()">
+            <span class="buttonText">Siguiente</span>
+        </button>
+
+    </ng-container>
+
+    <!-- if para mostrar boton si no adivino la palabra -->
+
+    <ng-template #elseTemplate>
+
+        <div [ngClass]="'finishMessage '+statusClass">
+            <span *ngFor="let word of statusWords" class="messageWord">{{word}}</span>
+        </div>
+
+        <button class="resultButtonF" (click)="hangService.startGame()">
+            <span class="buttonText">Registrarse</span>
+        </button>
+
+    </ng-template>
+
+</div>
+
