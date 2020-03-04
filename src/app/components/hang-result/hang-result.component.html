@@ -34,7 +34,7 @@
             <span *ngFor="let word of statusWords" class="messageWord">{{word}}</span>
         </div>
 
-        <button class="resultButtonF" (click)="hangService.startGame()">
+        <button class="resultButtonF" (click)="hangService.startGame()" routerLink="/list-games">
             <span class="buttonText">Registrarse</span>
         </button>
 

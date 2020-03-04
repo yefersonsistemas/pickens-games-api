@@ -52,6 +52,14 @@ export class MemoryGameService {
       this.isBoardLocked = false;
     }
 
+    playAgains(): void {
+      this.router.navigate(['list-games']);
+      this.cards = this.cardService.getCards();
+      this.activeCards = [];
+      this.rounds = 0;
+      this.isBoardLocked = false;
+    }
+
     toggleCheat(): void {
       this.isCheatActivated = !this.isCheatActivated;
     }

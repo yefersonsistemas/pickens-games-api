@@ -5,7 +5,7 @@
 
     <div class="board__info">
         <p>Movimientos:&nbsp;{{gameService.rounds}}</p>
-        <app-memory-button-exit routerLink="/list-games">
+        <app-memory-button-exit (click)="gameService.playAgains()" type="button">
             Salir
         </app-memory-button-exit>
     </div>
