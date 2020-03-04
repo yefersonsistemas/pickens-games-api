@@ -28,7 +28,7 @@ export class MemoryGameService {
     }
     // Metodo para descubrir la carta, hacer el conteo de los movientos y terminar el juego.
     showCard( card: Card ): void {
-      if (!this.isMoveValid()) return;
+      if (!this.isMoveValid()) { return; }
 
       if (this.isCardValid(card)) {
         this.activeCards.push(card);
@@ -40,10 +40,10 @@ export class MemoryGameService {
       }
 
       if (this.isGameOver) {
-        this.addPlayerInRanking(); //agregar jugador a la tabla de posiciones
+        this.addPlayerInRanking(); // agregar jugador a la tabla de posiciones cuando se termine el juego
       }
     }
-
+    // para reiniciar el juego de memoria
     playAgain(): void {
       this.router.navigate(['memory-playing']);
       this.cards = this.cardService.getCards();
@@ -51,7 +51,15 @@ export class MemoryGameService {
       this.rounds = 0;
       this.isBoardLocked = false;
     }
-
+    // pasa salir a la lista de los juegos y reiniciar el juego
+    playAgains(): void {
+      this.router.navigate(['list-games']);
+      this.cards = this.cardService.getCards();
+      this.activeCards = [];
+      this.rounds = 0;
+      this.isBoardLocked = false;
+    }
+    // para ver los id ocultos de las cartas
     toggleCheat(): void {
       this.isCheatActivated = !this.isCheatActivated;
     }
@@ -91,7 +99,7 @@ export class MemoryGameService {
     private isMatch(): boolean {
       return this.activeCards[0].id === this.activeCards[1].id;
     }
-
+    // oculta las cartas volteadas si no coinciden
     private hideSelectedCards(): void {
       this.activeCards[0].hide();
       this.activeCards[1].hide();
