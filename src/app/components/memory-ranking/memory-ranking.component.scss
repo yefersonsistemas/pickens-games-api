@@ -1,0 +1,66 @@
+// @import "src/variables";
+
+.table-container {
+    width: 500px;
+    max-width: 100%;
+    margin: 20px auto;
+    max-height: 420px;
+    overflow-y: scroll;
+}
+// // ::-webkit-scrollbar {
+// //   display: none;
+// // }
+// .table-container::-webkit-scrollbar {
+//   width: 5px;
+// }
+
+// /* Track */
+// .table-container::-webkit-scrollbar-track {
+//   box-shadow: inset 0 0 5px grey; 
+//   border-radius: 10px;
+// }
+
+// /* Handle */
+// .table-container::-webkit-scrollbar-thumb {
+//   background: white; 
+//   border-radius: 10px;
+// }
+
+// /* Handle on hover */
+// .table-container::-webkit-scrollbar-thumb:hover {
+//   background: white; 
+// }
+.ranking-table {
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+    color: #ffffff;
+
+&__tr {
+    background: rgba(255, 255, 255, 0.15);
+
+    &:nth-child(even) {
+        background: #4d8c22;
+    }
+}
+
+&__td {
+    padding: 10px 0;
+}
+
+&__th {
+    font-weight: normal;
+    background: darken(#4d8c22, 15%);
+    padding: 10px 0;
+}
+}
+
+app-button {
+    text-align: center;
+    display: block;
+}
+
+app-button-exit {
+    text-align: center;
+    display: block;
+}
