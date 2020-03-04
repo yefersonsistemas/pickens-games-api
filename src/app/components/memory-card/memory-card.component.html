@@ -1,9 +1,16 @@
+<!---Este componente lista todas las fotos para-->
+
 <div class="container" [class.show]="card.visible" (click)="gameService.showCard(card)">
+ 
+
     <div class="card"> 
+        <!---Agregando imagen a las card-->
         <div class="card__face card__face--front">
             <img  class="card__image" [src]="card.image.path" [alt]="card.image.name">
         </div>
-        <div class="card__face card__face--back">
+
+        <div class="card__face card__face--back"> <!---Coloca el color mostasa a las card.-->
+            pickens
             <!-- <span *ngIf="gameService.isCheatActivated">{{card.id}}</span> -->
         </div>
     </div>

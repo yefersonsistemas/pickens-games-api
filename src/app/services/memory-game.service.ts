@@ -40,7 +40,7 @@ export class MemoryGameService {
       }
 
       if (this.isGameOver) {
-        this.addPlayerInRanking();
+        this.addPlayerInRanking(); //agregar jugador a la tabla de posiciones
       }
     }
 
