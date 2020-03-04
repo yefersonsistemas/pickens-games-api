@@ -17,7 +17,7 @@ export class MemoryRankingService {
 
   addPlayer(player) {
     const list = this.getList();
-    list.push(player);
+     list.push(player);
     localStorage.setItem('pickensgames/memory-ranking', JSON.stringify(list));
   }
 }

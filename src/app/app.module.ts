@@ -18,6 +18,8 @@ import { MemoryModalComponent } from './components/memory-modal/memory-modal.com
 import { MemoryPlayingComponent } from './components/memory-playing/memory-playing.component';
 import { MemoryRankingComponent } from './components/memory-ranking/memory-ranking.component';
 import { HttpClientModule } from '@angular/common/http';
+import { TimerComponent } from './components/timer/timer.component';
+import { ModalCronometroComponent } from './components/modal-cronometro/modal-cronometro.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { HttpClientModule } from '@angular/common/http';
     MemoryCardComponent,
     MemoryModalComponent,
     MemoryPlayingComponent,
-    MemoryRankingComponent
+    MemoryRankingComponent,
+    TimerComponent,
+    ModalCronometroComponent,
   ],
   imports: [
     BrowserModule,
