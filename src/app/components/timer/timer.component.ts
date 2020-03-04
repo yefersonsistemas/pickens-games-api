@@ -36,10 +36,11 @@ export class TimerComponent implements OnInit {
     console.log('Starting count down...');
 
     this.counter = setInterval(() => {
+      // this.battleInit() e ejecuta cada 5 segundos, incluso después de que el usuario se aleje de esta página.
       this.sec--;
       this.time = this.getTime();
 
-      //End of the timer
+      //Fin del temporizador.
       if (this.stopTimer == true) {
         this.stopCountDown();
       }
@@ -54,12 +55,12 @@ export class TimerComponent implements OnInit {
         this.sec = 60;
       }
 
-      //Turn to timer Orange
+      //Gire al temporizador Naranja
       if (this.min < 1) {
         this.minLeft = true;
       }
 
-      //Turn to timer Red
+      //Gire al temporizador Roja
       if (this.sec < 30 && this.min < 1) {
         this.minLeft = false;
         this.secLeft = true;
@@ -69,7 +70,8 @@ export class TimerComponent implements OnInit {
   //culmina el averiguar
 
   stopCountDown(): void {
-    clearInterval(this.counter);
+    clearInterval(this.counter); //para detener el setInterval()
+    
     this.calculateTimeRemaining();
     this.player.setUserTime(
       `${this.addZero(this.min)}: ${this.addZero(this.sec)}`,
@@ -92,7 +94,7 @@ export class TimerComponent implements OnInit {
         this.sec = 0;
       }
 
-      this.timeTaken.emit(`${this.addZero(this.min)}:${this.addZero(this.sec)}`);
+      this.timeTaken.emit(`${this.addZero(this.min)}:${this.addZero(this.sec)}`); //que cuando este cero se termine
     }
 //fin de funcion calculateTimeRemaining
 
