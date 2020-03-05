@@ -1,12 +1,15 @@
 <div class="board">
-    <h3>Nivel&nbsp;{{nivel}}</h3>
-    <app-timer
-        (timesUpEvent)="isTimesUp = $event"
-
-        (timeTaken)="timeTaken = $event"
-
-        [level]="nivel"
-    ></app-timer>
+    <div class="board__info">
+        <h1>Nivel&nbsp;{{nivel}}</h1>
+            
+        <app-timer class="tam"
+            (timesUpEvent)="isTimesUp = $event"
+    
+            (timeTaken)="timeTaken = $event"
+    
+            [level]="nivel"
+        ></app-timer> 
+    </div>   
 
     <div class="board__cards">  
         <app-memory-card *ngFor="let card of gameService.cards" [card]="card"></app-memory-card>
@@ -23,9 +26,10 @@
         <div class="modal-content">
             <h2 class="modal-content__title">¡¡Lo Lograste!!</h2>
             <p class="modal-content__round">Cantidad de Movimientos:&nbsp;{{ gameService.rounds }}</p>
-            <app-memory-button (click)="gameService.playLevel(nivel)" type="button">
-                Siguiente
+            <app-memory-button (click)="gameService.playLevel(ruta)" type="button">
+                Siguiente nivel
             </app-memory-button>
         </div>
     </app-memory-modal>
+
 </div>

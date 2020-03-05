@@ -48,50 +48,21 @@ export class MemoryGameService {
     }
     // para reiniciar el juego de memoria
  
-    playLevel(nivel): void {
-      console.log(nivel);
-      if(nivel == 1){
-        this.router.navigate(['memory-board-level2']);
-      }
-      if(nivel == 2){
-        this.router.navigate(['memory-board-level3']);
-      }
-      if(nivel == 3){
-        this.router.navigate(['memory-board-level4']);
-      }
-      if(nivel == 4){
-        this.router.navigate(['memory-board-level5']);
-      }     
+    playLevel(ruta): void {
+        this.router.navigate([ruta]);
       this.cards = this.cardService.getCards();
       this.activeCards = [];
       this.rounds = 0;
       this.isBoardLocked = false;
     }
-
-    // playLevel3(): void {
-    //   this.router.navigate(['memory-board-level3']);
-    //   this.cards = this.cardService.getCards();
-    //   this.activeCards = [];
-    //   this.rounds = 0;
-    //   this.isBoardLocked = false;
-    // }
-
-    // playLevel4(): void {
-    //   this.router.navigate(['memory-board-level4']);
-    //   this.cards = this.cardService.getCards();
-    //   this.activeCards = [];
-    //   this.rounds = 0;
-    //   this.isBoardLocked = false;
-    // }
-
-    // playLevel5(): void {
-    //   this.router.navigate(['memory-board-level5']);
-    //   this.cards = this.cardService.getCards();
-    //   this.activeCards = [];
-    //   this.rounds = 0;
-    //   this.isBoardLocked = false;
-    // }
-
+  
+    playAgains33(): void {
+      this.router.navigate(['modal-cronometro']);
+      // this.cards = this.cardService.getCards();
+      // this.activeCards = [];
+      // this.rounds = 0;
+      // this.isBoardLocked = false;
+    }
     // pasa salir a la lista de los juegos y reiniciar el juego
     playAgains(): void {
       this.router.navigate(['list-games']);

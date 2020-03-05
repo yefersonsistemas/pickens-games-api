@@ -24,10 +24,10 @@
 
     <app-memory-modal [visible]="gameService.isGameOver">
         <div class="modal-content">
-            <h2 class="modal-content__title">¡¡Lo Lograste!!</h2>
+            <h2 class="modal-content__title">¡Has Ganado!!</h2>
             <p class="modal-content__round">Cantidad de Movimientos:&nbsp;{{ gameService.rounds }}</p>
             <app-memory-button (click)="gameService.playLevel(ruta)" type="button">
-                Siguiente nivel
+                Fin del juego
             </app-memory-button>
         </div>
     </app-memory-modal>

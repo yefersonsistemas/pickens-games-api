@@ -25,6 +25,8 @@ import { MemoryBoardLevel3Component } from './components/memory-board-level3/mem
 import { MemoryBoardLevel4Component } from './components/memory-board-level4/memory-board-level4.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
+import { MemoryBoardLevel5Component } from './components/memory-board-level5/memory-board-level5.component';
+import { MemoryBoardLevelFinalComponent } from './components/memory-board-level-final/memory-board-level-final.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +50,8 @@ import { MaterialModule } from './material.module';
     MemoryBoardLevel2Component,
     MemoryBoardLevel3Component,
     MemoryBoardLevel4Component,
+    MemoryBoardLevel5Component,
+    MemoryBoardLevelFinalComponent,
   ],
   imports: [
     BrowserModule,
