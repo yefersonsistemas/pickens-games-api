@@ -19,13 +19,18 @@ import { MemoryModalComponent } from './components/memory-modal/memory-modal.com
 import { MemoryPlayingComponent } from './components/memory-playing/memory-playing.component';
 import { MemoryRankingComponent } from './components/memory-ranking/memory-ranking.component';
 import { HttpClientModule } from '@angular/common/http';
-import { TimerComponent } from './components/timer/timer.component';
+// import { TimerComponent } from './components/timer/timer.component';
 import { ModalCronometroComponent } from './components/modal-cronometro/modal-cronometro.component';
 import { MemoryRegisterComponent } from './components/memory-register/memory-register.component';
 
 import { MemoryBoardLevel2Component } from './components/memory-board-level2/memory-board-level2.component';
 import { MemoryBoardLevel3Component } from './components/memory-board-level3/memory-board-level3.component';
 import { MemoryBoardLevel4Component } from './components/memory-board-level4/memory-board-level4.component';
+import { QuizzPlayingComponent } from './components/quizz-playing/quizz-playing.component';
+import { QuizzBoardComponent } from './components/quizz-board/quizz-board.component';
+import { QuizzFinalScoreComponent } from './components/quizz-final-score/quizz-final-score.component';
+import { QuizzQuestionComponent } from './components/quizz-question/quizz-question.component';
+import { QuizzTimerComponent } from './components/quizz-timer/quizz-timer.component';
 
 @NgModule({
   declarations: [
@@ -44,12 +49,17 @@ import { MemoryBoardLevel4Component } from './components/memory-board-level4/mem
     MemoryModalComponent,
     MemoryPlayingComponent,
     MemoryRankingComponent,
-    TimerComponent,
+    // TimerComponent,
     ModalCronometroComponent,
     MemoryRegisterComponent,
     MemoryBoardLevel2Component,
     MemoryBoardLevel3Component,
     MemoryBoardLevel4Component,
+    QuizzPlayingComponent,
+    QuizzBoardComponent,
+    QuizzFinalScoreComponent,
+    QuizzQuestionComponent,
+    QuizzTimerComponent,
   ],
   imports: [
     BrowserModule,

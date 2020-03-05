@@ -1,12 +1,12 @@
 <div class="board">
     <h3>Nivel&nbsp;{{nivel}}</h3>
-    <app-timer
+    <!-- <app-timer
         (timesUpEvent)="isTimesUp = $event"
 
         (timeTaken)="timeTaken = $event"
 
         [level]="nivel"
-    ></app-timer>
+    ></app-timer> -->
 
     <div class="board__cards">  
 
@@ -24,9 +24,9 @@
         <div class="modal-content">
             <h2 class="modal-content__title">¡¡Lo Lograste!!</h2>
             <p class="modal-content__round">Cantidad de Movimientos:&nbsp;{{ gameService.rounds }}</p>
-            <app-memory-button (click)="gameService.playAgain()" type="button">
+            <!-- <app-memory-button (click)="gameService.playAgain()" type="button">
                 Siguiente
-            </app-memory-button>
+            </app-memory-button> -->
         </div>
     </app-memory-modal>
 </div>
