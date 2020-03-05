@@ -1,5 +1,5 @@
 <div class="board">
-    <h3>Nivel&nbsp;{{nivel}}</h3>
+    <h1>Nivel&nbsp;{{nivel}}</h1>
     <app-timer
         (timesUpEvent)="isTimesUp = $event"
 
@@ -24,8 +24,8 @@
         <div class="modal-content">
             <h2 class="modal-content__title">¡¡Lo Lograste!!</h2>
             <p class="modal-content__round">Cantidad de Movimientos:&nbsp;{{ gameService.rounds }}</p>
-            <app-memory-button (click)="gameService.playAgain()" type="button">
-                Siguiente
+            <app-memory-button (click)="gameService.playLevel(ruta)" type="button">
+                Siguiente nivel
             </app-memory-button>
         </div>
     </app-memory-modal>

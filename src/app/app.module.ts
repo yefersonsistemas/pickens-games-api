@@ -23,6 +23,8 @@ import { ModalCronometroComponent } from './components/modal-cronometro/modal-cr
 import { MemoryBoardLevel2Component } from './components/memory-board-level2/memory-board-level2.component';
 import { MemoryBoardLevel3Component } from './components/memory-board-level3/memory-board-level3.component';
 import { MemoryBoardLevel4Component } from './components/memory-board-level4/memory-board-level4.component';
+import { MemoryBoardLevel5Component } from './components/memory-board-level5/memory-board-level5.component';
+import { MemoryBoardLevelFinalComponent } from './components/memory-board-level-final/memory-board-level-final.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +48,8 @@ import { MemoryBoardLevel4Component } from './components/memory-board-level4/mem
     MemoryBoardLevel2Component,
     MemoryBoardLevel3Component,
     MemoryBoardLevel4Component,
+    MemoryBoardLevel5Component,
+    MemoryBoardLevelFinalComponent,
   ],
   imports: [
     BrowserModule,
