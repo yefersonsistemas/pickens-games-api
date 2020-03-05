@@ -9,6 +9,7 @@
     ></app-timer>
 
     <div class="board__cards">  
+
         <app-memory-card *ngFor="let card of gameService.cards" [card]="card"></app-memory-card>
     </div>
 
@@ -23,9 +24,10 @@
         <div class="modal-content">
             <h2 class="modal-content__title">¡¡Lo Lograste!!</h2>
             <p class="modal-content__round">Cantidad de Movimientos:&nbsp;{{ gameService.rounds }}</p>
-            <app-memory-button (click)="gameService.playLevel(nivel)" type="button">
+            <app-memory-button (click)="gameService.playAgain()" type="button">
                 Siguiente
             </app-memory-button>
         </div>
     </app-memory-modal>
 </div>
+

@@ -5,6 +5,9 @@ import { ListGamesComponent } from './components/list-games/list-games.component
 import { MemoryPlayingComponent } from './components/memory-playing/memory-playing.component';
 import { HangPlayingComponent } from './components/hang-playing/hang-playing.component';
 import { ModalCronometroComponent } from './components/modal-cronometro/modal-cronometro.component';
+import { MemoryBoardLevel2Component } from './components/memory-board-level2/memory-board-level2.component';
+import { MemoryBoardLevel3Component } from './components/memory-board-level3/memory-board-level3.component';
+import { MemoryBoardLevel4Component } from './components/memory-board-level4/memory-board-level4.component';
 
 
 const routes: Routes = [
@@ -13,6 +16,9 @@ const routes: Routes = [
   { path: 'memory-playing', component: MemoryPlayingComponent },
   { path: 'hang-playing', component: HangPlayingComponent },
   { path: 'modal-cronometro', component: ModalCronometroComponent },
+  { path: 'memory-board-level2', component: MemoryBoardLevel2Component }, //nivel 2 
+  { path: 'memory-board-level3', component: MemoryBoardLevel3Component }, //nivel 2 
+  { path: 'memory-board-level4', component: MemoryBoardLevel4Component }, //nivel 2 
 ];
 
 @NgModule({
