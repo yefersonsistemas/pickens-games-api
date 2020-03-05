@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,6 +21,8 @@ import { MemoryRankingComponent } from './components/memory-ranking/memory-ranki
 import { HttpClientModule } from '@angular/common/http';
 import { TimerComponent } from './components/timer/timer.component';
 import { ModalCronometroComponent } from './components/modal-cronometro/modal-cronometro.component';
+import { MemoryRegisterComponent } from './components/memory-register/memory-register.component';
+
 
 @NgModule({
   declarations: [
@@ -40,11 +43,13 @@ import { ModalCronometroComponent } from './components/modal-cronometro/modal-cr
     MemoryRankingComponent,
     TimerComponent,
     ModalCronometroComponent,
+    MemoryRegisterComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

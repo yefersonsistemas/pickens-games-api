@@ -15,6 +15,8 @@ export class MemoryGameService {
   isCheatActivated = false;
   rounds = 0;
   playerName: string;
+  phone: string;
+  email: string;
 
   constructor( private cardService: MemoryCardService, private rankingService: MemoryRankingService,
     // tslint:disable-next-line: align
@@ -110,6 +112,8 @@ export class MemoryGameService {
       this.rankingService.addPlayer({
         name: this.playerName,
         rounds: this.rounds,
+        phone: this.phone,
+        email: this.email,
         // time: this.time,
       });
     }
