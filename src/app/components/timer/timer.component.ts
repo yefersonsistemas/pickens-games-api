@@ -1,6 +1,8 @@
 import { Component, OnInit,Input, Output, EventEmitter } from '@angular/core';
 import { MemoryCurrentPlayerService } from 'src/app/services/memory-current-player.service';
 import { Router } from '@angular/router';
+import { MemoryGameService } from 'src/app/services/memory-game.service';
+import { Level } from 'src/app/entities/level.class';
 
 @Component({
   selector: 'app-timer',
@@ -16,25 +18,50 @@ export class TimerComponent implements OnInit {
   private minLeft = false;
   private secLeft = false;
   private counter;
+  private nivel;
+
+  @Input() level:number;
 
   //Component Interaction
   @Input() stopTimer: Boolean;
   @Output() timeTaken: EventEmitter<String> = new EventEmitter();
   @Output() timesUpEvent: EventEmitter<Boolean> = new EventEmitter();
+ 
+  constructor(private player: MemoryCurrentPlayerService, private router: Router, public game: MemoryGameService) {
+  }
 
-  constructor(private player: MemoryCurrentPlayerService, private router: Router) {
-    this.min = 1;
-    this.sec = 1;
+  ngOnInit() {
+    if(this.level == 1){
+      this.min = 0;
+      this.sec = 60;
+    }
+
+    if(this.level == 2){
+      this.min = 0;
+      this.sec = 55;
+    }
+
+    if(this.level == 3){
+      this.min = 0;
+      this.sec = 50;
+    }
+
+    if(this.level == 4){
+      this.min = 0;
+      this.sec = 45;
+    }
+
+    // if(this.level == 5){
+    //   this.min = 0;
+    //   this.sec = 40;
+    // }
 
     this.startCountDown();
   }
 
-  ngOnInit() {}
-
   //averiguando 
   startCountDown(): void {
     console.log('Starting count down...');
-
     this.counter = setInterval(() => {
       // this.battleInit() e ejecuta cada 5 segundos, incluso después de que el usuario se aleje de esta página.
       this.sec--;
@@ -65,6 +92,12 @@ export class TimerComponent implements OnInit {
         this.minLeft = false;
         this.secLeft = true;
       }
+
+      if (this.game.isGameOver){
+        // this.game.playAgain();
+        clearInterval(this.counter);
+        // this.timesUpEvent.emit(true);
+      }
     }, 1000);
   }
   //culmina el averiguar
@@ -80,7 +113,8 @@ export class TimerComponent implements OnInit {
 
     setTimeout(() => {
 
-      this.router.navigate(['/modal-cronometro']);
+      // this.router.navigate(['/modal-cronometro']);
+      this.game.playAgains()
     }, 1000);
   }
 

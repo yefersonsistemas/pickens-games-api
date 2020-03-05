@@ -3,6 +3,7 @@ import { MemoryCardService } from './memory-card.service';
 import { MemoryRankingService } from './memory-ranking.service';
 import { Router } from '@angular/router';
 import { Card } from '../entities/card.clss';
+// import { Level } from '../entities/level.class';
 
 @Injectable({
   providedIn: 'root'
@@ -28,6 +29,7 @@ export class MemoryGameService {
     }
     // Metodo para descubrir la carta, hacer el conteo de los movientos y terminar el juego.
     showCard( card: Card ): void {
+      
       if (!this.isMoveValid()) { return; }
 
       if (this.isCardValid(card)) {
@@ -41,16 +43,55 @@ export class MemoryGameService {
 
       if (this.isGameOver) {
         this.addPlayerInRanking(); // agregar jugador a la tabla de posiciones cuando se termine el juego
+
       }
     }
     // para reiniciar el juego de memoria
-    playAgain(): void {
-      this.router.navigate(['memory-playing']);
+ 
+    playLevel(nivel): void {
+      console.log(nivel);
+      if(nivel == 1){
+        this.router.navigate(['memory-board-level2']);
+      }
+      if(nivel == 2){
+        this.router.navigate(['memory-board-level3']);
+      }
+      if(nivel == 3){
+        this.router.navigate(['memory-board-level4']);
+      }
+      if(nivel == 4){
+        this.router.navigate(['memory-board-level5']);
+      }     
       this.cards = this.cardService.getCards();
       this.activeCards = [];
       this.rounds = 0;
       this.isBoardLocked = false;
     }
+
+    // playLevel3(): void {
+    //   this.router.navigate(['memory-board-level3']);
+    //   this.cards = this.cardService.getCards();
+    //   this.activeCards = [];
+    //   this.rounds = 0;
+    //   this.isBoardLocked = false;
+    // }
+
+    // playLevel4(): void {
+    //   this.router.navigate(['memory-board-level4']);
+    //   this.cards = this.cardService.getCards();
+    //   this.activeCards = [];
+    //   this.rounds = 0;
+    //   this.isBoardLocked = false;
+    // }
+
+    // playLevel5(): void {
+    //   this.router.navigate(['memory-board-level5']);
+    //   this.cards = this.cardService.getCards();
+    //   this.activeCards = [];
+    //   this.rounds = 0;
+    //   this.isBoardLocked = false;
+    // }
+
     // pasa salir a la lista de los juegos y reiniciar el juego
     playAgains(): void {
       this.router.navigate(['list-games']);

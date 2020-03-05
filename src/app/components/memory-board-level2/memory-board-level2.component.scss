@@ -1,0 +1,45 @@
+.board {
+    width: 600px;
+    max-width: 100%;
+    margin: 10px auto;
+
+&__cards {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+&__info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: cursive;
+    padding: 10px;
+    // color: $white;
+}
+
+.modal-content {
+    &__title {
+    font-weight: normal;
+    text-align: center;
+    margin-bottom: 15px;
+    color: #383838;
+    }
+
+    &__link {
+    // color: $dark-green;
+    margin: 0 20px;
+    }
+
+    &__rounds {
+    margin-bottom: 10px;
+    text-align: center;
+    color: lighten(#383838, 35%);
+    }
+}
+}
+
+.cheat-btn {
+// color: lighten($green, 5%);
+background: none;
+border: none;
+}

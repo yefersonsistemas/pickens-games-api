@@ -20,6 +20,9 @@ import { MemoryRankingComponent } from './components/memory-ranking/memory-ranki
 import { HttpClientModule } from '@angular/common/http';
 import { TimerComponent } from './components/timer/timer.component';
 import { ModalCronometroComponent } from './components/modal-cronometro/modal-cronometro.component';
+import { MemoryBoardLevel2Component } from './components/memory-board-level2/memory-board-level2.component';
+import { MemoryBoardLevel3Component } from './components/memory-board-level3/memory-board-level3.component';
+import { MemoryBoardLevel4Component } from './components/memory-board-level4/memory-board-level4.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +43,9 @@ import { ModalCronometroComponent } from './components/modal-cronometro/modal-cr
     MemoryRankingComponent,
     TimerComponent,
     ModalCronometroComponent,
+    MemoryBoardLevel2Component,
+    MemoryBoardLevel3Component,
+    MemoryBoardLevel4Component,
   ],
   imports: [
     BrowserModule,
