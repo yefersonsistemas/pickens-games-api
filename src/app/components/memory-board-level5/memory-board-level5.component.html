@@ -1,12 +1,15 @@
 <div class="board">
-    <h1>Nivel&nbsp;{{nivel}}</h1>
-    <app-timer
-        (timesUpEvent)="isTimesUp = $event"
-
-        (timeTaken)="timeTaken = $event"
-
-        [level]="nivel"
-    ></app-timer>
+    <div class="board__info">
+        <h1>Nivel&nbsp;{{nivel}}</h1>
+            
+        <app-timer class="tam"
+            (timesUpEvent)="isTimesUp = $event"
+    
+            (timeTaken)="timeTaken = $event"
+    
+            [level]="nivel"
+        ></app-timer> 
+    </div>   
 
     <div class="board__cards">  
         <app-memory-card *ngFor="let card of gameService.cards" [card]="card"></app-memory-card>

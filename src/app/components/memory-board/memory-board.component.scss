@@ -2,7 +2,6 @@
     width: 700px;
     max-width: 100%;
     margin: 10px auto;
-    // background-color: #000;
 
 &__cards {
     display: flex;
@@ -44,4 +43,24 @@
 // color: lighten($green, 5%);
 background: none;
 border: none;
+}
+
+p, h1{
+    color:#fff;
+}
+
+p{
+    font-size: 28px;
+}
+
+h1{
+    font-size:50px;
+    width: 200px;
+    display: right;
+    // left: ;
+}
+
+.tam{
+    font-size:50px;
+    width: 400px;
 }
