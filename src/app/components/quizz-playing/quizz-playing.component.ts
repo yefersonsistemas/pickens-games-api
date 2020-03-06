@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./quizz-playing.component.scss']
 })
 export class QuizzPlayingComponent implements OnInit {
-  title = 'Trivia Pickens';
+
   constructor() { }
 
   ngOnInit() {
