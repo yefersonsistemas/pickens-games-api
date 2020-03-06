@@ -35,8 +35,8 @@ export class TimerComponent implements OnInit {
 
   ngOnInit() {
     if(this.level == 1){
-      this.min = 1;
-      this.sec = 30;
+      this.min = 0;
+      this.sec = 3;
     }
 
     if(this.level == 2){
