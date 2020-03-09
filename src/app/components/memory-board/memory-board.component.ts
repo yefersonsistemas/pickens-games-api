@@ -11,12 +11,13 @@ import { Level } from 'src/app/entities/level.class';
 
 export class MemoryBoardComponent implements OnInit {
   nivel: number;
+  ruta:string;
 
   constructor(public gameService: MemoryGameService) { }
 
   ngOnInit() {
-    this.nivel = 1
+    this.nivel = 1;
+    this.ruta = 'memory-board-level2';
   }
-
 
 }

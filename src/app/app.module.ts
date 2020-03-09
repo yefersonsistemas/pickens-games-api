@@ -30,6 +30,11 @@ import { QuizzPlayingComponent } from './components/quizz-playing/quizz-playing.
 import { QuizzQuestionComponent } from './components/quizz-question/quizz-question.component';
 import { QuizzRegisterComponent } from './components/quizz-register/quizz-register.component';
 import { QuizzResultComponent } from './components/quizz-result/quizz-result.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material.module';
+import { MemoryBoardLevel5Component } from './components/memory-board-level5/memory-board-level5.component';
+import { MemoryBoardLevelFinalComponent } from './components/memory-board-level-final/memory-board-level-final.component';
+
 
 @NgModule({
   declarations: [
@@ -58,12 +63,16 @@ import { QuizzResultComponent } from './components/quizz-result/quizz-result.com
     QuizzQuestionComponent,
     QuizzRegisterComponent,
     QuizzResultComponent,
+    MemoryBoardLevel5Component,
+    MemoryBoardLevelFinalComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    BrowserAnimationsModule,
+    MaterialModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
