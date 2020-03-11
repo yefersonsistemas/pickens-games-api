@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -26,14 +26,17 @@ import { MemoryRegisterComponent } from './components/memory-register/memory-reg
 import { MemoryBoardLevel2Component } from './components/memory-board-level2/memory-board-level2.component';
 import { MemoryBoardLevel3Component } from './components/memory-board-level3/memory-board-level3.component';
 import { MemoryBoardLevel4Component } from './components/memory-board-level4/memory-board-level4.component';
+import { MemoryBoardLevel5Component } from './components/memory-board-level5/memory-board-level5.component';
+import { MemoryBoardLevelFinalComponent } from './components/memory-board-level-final/memory-board-level-final.component';
 import { QuizzPlayingComponent } from './components/quizz-playing/quizz-playing.component';
 import { QuizzQuestionComponent } from './components/quizz-question/quizz-question.component';
 import { QuizzRegisterComponent } from './components/quizz-register/quizz-register.component';
 import { QuizzResultComponent } from './components/quizz-result/quizz-result.component';
+import { QuizzInstructionComponent } from './components/quizz-instruction/quizz-instruction.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
-import { MemoryBoardLevel5Component } from './components/memory-board-level5/memory-board-level5.component';
-import { MemoryBoardLevelFinalComponent } from './components/memory-board-level-final/memory-board-level-final.component';
+import { QuizzTimerComponent } from './components/quizz-timer/quizz-timer.component';
+import { QuizzQuestionService } from './services/quizz-question.service';
 
 
 @NgModule({
@@ -59,22 +62,25 @@ import { MemoryBoardLevelFinalComponent } from './components/memory-board-level-
     MemoryBoardLevel2Component,
     MemoryBoardLevel3Component,
     MemoryBoardLevel4Component,
+    MemoryBoardLevel5Component,
+    MemoryBoardLevelFinalComponent,
     QuizzPlayingComponent,
     QuizzQuestionComponent,
     QuizzRegisterComponent,
     QuizzResultComponent,
-    MemoryBoardLevel5Component,
-    MemoryBoardLevelFinalComponent,
+    QuizzInstructionComponent,
+    QuizzTimerComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     MaterialModule,
   ],
-  providers: [],
+  providers: [QuizzQuestionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

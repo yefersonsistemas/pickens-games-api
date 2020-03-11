@@ -43,31 +43,36 @@
             </mat-card-header>
             <mat-card-content>
                 
-                <form>
+                <form [formGroup]="registerForm" (ngSubmit)="OnSubmit(name.value,email.value,phone.value)">
+                    <!-- #registerForm="ngForm"  -->
                     <mat-grid-list cols="12">
                         <mat-grid-tile [colspan]="12" [rowspan]="2">
                             <mat-form-field>
                                 <mat-label>Nombre</mat-label>
-                                <input matInput name="name" type="text" required>
+                                <!-- [formControl]="nameFormControl" -->
+                                <input matInput name="name" type="text" required  formControlName="name" #name>
                             </mat-form-field>
                         </mat-grid-tile>
 
                         <mat-grid-tile [colspan]="12" [rowspan]="2">
                             <mat-form-field>
                                 <mat-label>Correo Electronico</mat-label>
-                                <input matInput name="email" type="text" [pattern]="emailPattern" required>
+                                <!-- [formControl]="emailFormControl"   -->
+                                <input matInput name="email" type="text" [pattern]="emailPattern" required formControlName="email" #email>
                             </mat-form-field>
                         </mat-grid-tile>
 
                         <mat-grid-tile [colspan]="12" [rowspan]="2">
                             <mat-form-field>
                                 <mat-label>Numero telefonico</mat-label>
-                                <input matInput name="phone" type="text" required>
+                                <!-- [formControl]="phoneFormControl" -->
+                                <input matInput name="phone" type="text" required  formControlName="phone" #phone> 
                             </mat-form-field>
                         </mat-grid-tile>
 
                     <mat-grid-tile [colspan]="6" [rowspan]="2">
-                        <button mat-raised-button type="submit" class="start" routerLink="/quizz-question">
+                        <!-- (ngSubmit)="OnSubmit(name.value,email.value,phone.value)" -->
+                        <button mat-raised-button type="submit" class="start" [disabled]="!registerForm.valid">
                             Comenzar
                         </button>
                     </mat-grid-tile>
