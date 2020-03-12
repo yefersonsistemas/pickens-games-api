@@ -1,0 +1,14 @@
+<form class="start-form" action="#" (ngSubmit)="startGame()">
+    <!-- <app-logo></app-logo> -->
+
+    <input type="text" placeholder="Nombre" required [(ngModel)]="gameService.playerName" name="playerName" class="input">
+
+    <input type="text" placeholder="Telefono"required [(ngModel)]="gameService.phone" name="phone" class="input">
+
+    <input type="text" placeholder="Correo Electronico"required [(ngModel)]="gameService.email" name="email" class="input">
+
+    <div class="buttons-container">
+        <!-- <app-button type="submit">Jugar!</app-button>
+        <app-button class="link" routerLink="/ranking">Ranking</app-button> -->
+    </div>
+</form>

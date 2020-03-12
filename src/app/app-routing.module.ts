@@ -8,8 +8,13 @@ import { ModalCronometroComponent } from './components/modal-cronometro/modal-cr
 import { MemoryBoardLevel2Component } from './components/memory-board-level2/memory-board-level2.component';
 import { MemoryBoardLevel3Component } from './components/memory-board-level3/memory-board-level3.component';
 import { MemoryBoardLevel4Component } from './components/memory-board-level4/memory-board-level4.component';
+import { QuizzPlayingComponent } from './components/quizz-playing/quizz-playing.component';
+
 import { MemoryBoardLevel5Component } from './components/memory-board-level5/memory-board-level5.component';
 import { MemoryBoardLevelFinalComponent } from './components/memory-board-level-final/memory-board-level-final.component';
+import { QuizzQuestionComponent } from './components/quizz-question/quizz-question.component';
+import { QuizzResultComponent } from './components/quizz-result/quizz-result.component';
+import { QuizzRankingComponent } from './components/quizz-ranking/quizz-ranking.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: HomeComponent },
@@ -17,11 +22,15 @@ const routes: Routes = [
   { path: 'memory-playing', component: MemoryPlayingComponent },
   { path: 'hang-playing', component: HangPlayingComponent },
   { path: 'modal-cronometro', component: ModalCronometroComponent },
-  { path: 'memory-board-level2', component: MemoryBoardLevel2Component },  
-  { path: 'memory-board-level3', component: MemoryBoardLevel3Component }, 
-  { path: 'memory-board-level4', component: MemoryBoardLevel4Component },  
-  { path: 'memory-board-level5', component: MemoryBoardLevel5Component }, 
+  { path: 'memory-board-level2', component: MemoryBoardLevel2Component },
+  { path: 'memory-board-level3', component: MemoryBoardLevel3Component },
+  { path: 'memory-board-level4', component: MemoryBoardLevel4Component },
+  { path: 'memory-board-level5', component: MemoryBoardLevel5Component },
   { path: 'memory-board-level-final', component: MemoryBoardLevelFinalComponent },
+  { path: 'quizz-playing', component: QuizzPlayingComponent },
+  { path: 'quizz-question', component: QuizzQuestionComponent },
+  { path: 'quizz-result', component: QuizzResultComponent },
+  { path: 'quizz-ranking', component: QuizzRankingComponent },
 ];
 
 @NgModule({

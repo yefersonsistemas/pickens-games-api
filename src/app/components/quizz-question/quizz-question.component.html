@@ -1,0 +1,29 @@
+<div *ngIf="quizService.qns && this.quizService.qnProgress !=10">
+    <!-- <span> Tiempo: {{ quizService.displayTimeElapsed() }}</span> -->
+    <mat-progress-bar mode="determinate" value="(quizService.qnProgress+1)*10"></mat-progress-bar>
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title *ngFor="let question of qns.question    ">
+                <span>
+                    {{quizService.qnProgress+1}}.{{ question.qn}}
+                </span>
+            </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <mat-list  *ngFor="let option of qns.question">
+                <mat-list-item (click)="answer()">
+                    {{ option.option1 }}
+                </mat-list-item>
+                <mat-list-item>
+                    {{ option.option2 }}
+                </mat-list-item>
+                <mat-list-item>
+                    {{ option.option3 }}
+                </mat-list-item>
+                <mat-list-item>
+                    {{ option.option4 }}
+                </mat-list-item>
+            </mat-list>
+        </mat-card-content>
+    </mat-card>
+</div>
