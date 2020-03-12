@@ -3,6 +3,7 @@ import { MemoryCardService } from './memory-card.service';
 import { MemoryRankingService } from './memory-ranking.service';
 import { Router } from '@angular/router';
 import { Card } from '../entities/card.clss';
+// import { Level } from '../entities/level.class';
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +16,8 @@ export class MemoryGameService {
   isCheatActivated = false;
   rounds = 0;
   playerName: string;
+  phone: string;
+  email: string;
 
   constructor( private cardService: MemoryCardService, private rankingService: MemoryRankingService,
     // tslint:disable-next-line: align
@@ -28,7 +31,8 @@ export class MemoryGameService {
     }
     // Metodo para descubrir la carta, hacer el conteo de los movientos y terminar el juego.
     showCard( card: Card ): void {
-      if (!this.isMoveValid()) return;
+      
+      if (!this.isMoveValid()) { return; }
 
       if (this.isCardValid(card)) {
         this.activeCards.push(card);
@@ -40,18 +44,36 @@ export class MemoryGameService {
       }
 
       if (this.isGameOver) {
-        this.addPlayerInRanking();
+        this.addPlayerInRanking(); // agregar jugador a la tabla de posiciones cuando se termine el juego
+
       }
     }
-
-    playAgain(): void {
-      this.router.navigate(['memory-playing']);
+    // para reiniciar el juego de memoria
+ 
+    playLevel(ruta): void {
+        this.router.navigate([ruta]);
       this.cards = this.cardService.getCards();
       this.activeCards = [];
       this.rounds = 0;
       this.isBoardLocked = false;
     }
-
+  
+    playAgains33(): void {
+      this.router.navigate(['modal-cronometro']);
+      // this.cards = this.cardService.getCards();
+      // this.activeCards = [];
+      // this.rounds = 0;
+      // this.isBoardLocked = false;
+    }
+    // pasa salir a la lista de los juegos y reiniciar el juego
+    playAgains(): void {
+      this.router.navigate(['list-games']);
+      this.cards = this.cardService.getCards();
+      this.activeCards = [];
+      this.rounds = 0;
+      this.isBoardLocked = false;
+    }
+    // para ver los id ocultos de las cartas
     toggleCheat(): void {
       this.isCheatActivated = !this.isCheatActivated;
     }
@@ -91,7 +113,7 @@ export class MemoryGameService {
     private isMatch(): boolean {
       return this.activeCards[0].id === this.activeCards[1].id;
     }
-
+    // oculta las cartas volteadas si no coinciden
     private hideSelectedCards(): void {
       this.activeCards[0].hide();
       this.activeCards[1].hide();
@@ -102,6 +124,8 @@ export class MemoryGameService {
       this.rankingService.addPlayer({
         name: this.playerName,
         rounds: this.rounds,
+        phone: this.phone,
+        email: this.email,
         // time: this.time,
       });
     }

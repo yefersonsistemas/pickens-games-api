@@ -1,1 +1,32 @@
-<p>memory-ranking works!</p>
+<!-- <app-logo></app-logo> -->
+<div class="table-container">
+    <table class="ranking-table">
+        <thead>
+            <tr class="ranking-table__tr">
+                <th class="ranking-table__th">Jugador</th>
+                <th class="ranking-table__th">Movimientos</th>
+            </tr>
+        </thead>
+        <tbody class="ranking-table__tbody">
+            <tr class="ranking-table__tr" *ngFor="let player of rankingService.getList()">
+                <td class="ranking-table__td">{{ player.name }}</td>
+                <td class="ranking-table__td">{{ player.rounds }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="row">
+    <div class="col-6">
+        <app-memory-button class="center" type="submit" (click)="gameService.playAgain()">
+            Jugar
+        </app-memory-button> 
+    </div>
+    <div class="col-6">
+        <app-memory-button-exit class="center" routerLink="/list-games">
+            Inicio
+        </app-memory-button-exit>
+    </div>
+</div>
+
+
