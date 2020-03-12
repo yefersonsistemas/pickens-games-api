@@ -14,6 +14,7 @@ import { MemoryBoardLevel5Component } from './components/memory-board-level5/mem
 import { MemoryBoardLevelFinalComponent } from './components/memory-board-level-final/memory-board-level-final.component';
 import { QuizzQuestionComponent } from './components/quizz-question/quizz-question.component';
 import { QuizzResultComponent } from './components/quizz-result/quizz-result.component';
+import { QuizzRankingComponent } from './components/quizz-ranking/quizz-ranking.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: HomeComponent },
@@ -29,6 +30,7 @@ const routes: Routes = [
   { path: 'quizz-playing', component: QuizzPlayingComponent },
   { path: 'quizz-question', component: QuizzQuestionComponent },
   { path: 'quizz-result', component: QuizzResultComponent },
+  { path: 'quizz-ranking', component: QuizzRankingComponent },
 ];
 
 @NgModule({

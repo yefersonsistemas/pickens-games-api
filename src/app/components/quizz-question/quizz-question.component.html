@@ -11,7 +11,7 @@
         </mat-card-header>
         <mat-card-content>
             <mat-list  *ngFor="let option of qns.question">
-                <mat-list-item ()="answer()">
+                <mat-list-item (click)="answer()">
                     {{ option.option1 }}
                 </mat-list-item>
                 <mat-list-item>

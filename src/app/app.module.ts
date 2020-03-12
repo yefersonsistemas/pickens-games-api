@@ -32,11 +32,10 @@ import { QuizzPlayingComponent } from './components/quizz-playing/quizz-playing.
 import { QuizzQuestionComponent } from './components/quizz-question/quizz-question.component';
 import { QuizzRegisterComponent } from './components/quizz-register/quizz-register.component';
 import { QuizzResultComponent } from './components/quizz-result/quizz-result.component';
-import { QuizzInstructionComponent } from './components/quizz-instruction/quizz-instruction.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
-import { QuizzTimerComponent } from './components/quizz-timer/quizz-timer.component';
-import { QuizzQuestionService } from './services/quizz-question.service';
+
+import { QuizzRankingComponent } from './components/quizz-ranking/quizz-ranking.component';
 
 
 @NgModule({
@@ -68,8 +67,8 @@ import { QuizzQuestionService } from './services/quizz-question.service';
     QuizzQuestionComponent,
     QuizzRegisterComponent,
     QuizzResultComponent,
-    QuizzInstructionComponent,
-    QuizzTimerComponent,
+    QuizzRankingComponent
+
   ],
   imports: [
     BrowserModule,
@@ -80,7 +79,7 @@ import { QuizzQuestionService } from './services/quizz-question.service';
     BrowserAnimationsModule,
     MaterialModule,
   ],
-  providers: [QuizzQuestionService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

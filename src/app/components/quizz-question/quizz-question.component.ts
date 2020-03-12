@@ -1,7 +1,8 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
-import { QuizzQuestionService } from '../../services/quizz-question.service';
-import { QuizzTimerService } from '../../services/quizz-timer.service';
+// import { QuizzQuestionService } from '../../services/quizz-question.service';
+import { QuizzService } from 'src/app/services/quizz.service';
+
 
 @Component({
   selector: 'app-quizz-question',
@@ -13,7 +14,7 @@ export class QuizzQuestionComponent implements OnInit {
   seconds: number;
   timer;
   qnProgress: number;
-  constructor( private router: Router, private quizService: QuizzQuestionService ) {
+  constructor( private router: Router, private quizService: QuizzService ) {
 
     }
 

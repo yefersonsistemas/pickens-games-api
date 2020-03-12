@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { QuizzTimerService } from './quizz-timer.service';
+import { QuizzService } from './quizz.service';
 
-describe('QuizzTimerService', () => {
+describe('QuizzService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: QuizzTimerService = TestBed.get(QuizzTimerService);
+    const service: QuizzService = TestBed.get(QuizzService);
     expect(service).toBeTruthy();
   });
 });

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { QuizzQuestionService } from '../../services/quizz-question.service';
+// import { QuizzQuestionService } from '../../services/quizz-question.service';
 import { FormControl, FormGroup } from '@angular/forms';
+import { QuizzService } from 'src/app/services/quizz.service';
 
 @Component({
   selector: 'app-quizz-register',
@@ -18,7 +19,7 @@ export class QuizzRegisterComponent implements OnInit {
 
   emailPattern = '^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$';
 
-  constructor(private router: Router, private quizService: QuizzQuestionService) { }
+  constructor(private router: Router, private quizService: QuizzService) { }
 
   ngOnInit() {
   }
