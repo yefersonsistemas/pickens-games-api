@@ -1,10 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+import {MatPaginator} from '@angular/material/paginator';
+import {MatSort} from '@angular/material/sort';
+import {merge, Observable, of as observableOf} from 'rxjs';
+import {catchError, map, startWith, switchMap} from 'rxjs/operators';
+
 
 export interface PeriodicElement {
   name: string;
-  position: number;
-  weight: number;
-  symbol: string;
+  score: string;
+  time: string;
 }
 
 @Component({
@@ -12,11 +16,13 @@ export interface PeriodicElement {
   templateUrl: './quizz-ranking.component.html',
   styleUrls: ['./quizz-ranking.component.scss']
 })
-export class QuizzRankingComponent implements OnInit {
+export class QuizzRankingComponent implements AfterViewInit {
+
+  displayedColumns: string[] =  ['name', 'score', 'time'];
 
   constructor() { }
 
-  ngOnInit() {
+  ngAfterViewInit() {
   }
 
 }

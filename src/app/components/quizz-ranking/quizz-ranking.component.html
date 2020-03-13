@@ -1,16 +1,25 @@
 <div>
-    <table mat-table>
-        <ng-container matColumDef="name">
-            <th mat-header-cell></th>
-            <td mat-cell></td>
+    <table mat-table [dataSource]="" class="mat-elevation-z8">
+
+        <!-- name Column -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef> Nombre </th>
+          <td mat-cell *matCellDef="">  </td>
         </ng-container>
-         <ng-container>
-            <th mat-header-cell></th>
-            <td mat-cell></td>
+    
+        <!-- score Column -->
+        <ng-container matColumnDef="score">
+          <th mat-header-cell *matHeaderCellDef> Puntuación </th>
+          <td mat-cell >  </td>
         </ng-container>
-        <ng-container>
-            <th mat-header-cell></th>
-            <td mat-cell></td>
+    
+        <!-- time Column -->
+        <ng-container matColumnDef="time">
+          <th mat-header-cell *matHeaderCellDef> Tiempo </th>
+          <td mat-cell >  </td>
         </ng-container>
+    
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
 </div>
