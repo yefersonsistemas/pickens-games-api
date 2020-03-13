@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
+const Url = 'http://127.0.0.1:8000/api/';
 export interface HangLetter {
   fromMovie: boolean;
   revealedFromInit: boolean;
@@ -158,6 +159,17 @@ isFail(): boolean {
 async initMoviesList() {
 const moviesCompleteList: Array<any> = await this.http.get<any>(this.MOVIES_URL).toPromise();
 this.moviesList = moviesCompleteList.map(movie => movie.title);
+}
+
+//registrar jugador
+registerParticipant(name: string, email: string, phone: string) {
+  const data = {
+    name,
+    email,
+    phone,
+  };
+  console.log('servicio', data);
+  return this.http.post( Url + 'register/hangman', data);
 }
 
 }

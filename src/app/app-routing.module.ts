@@ -16,6 +16,7 @@ import { QuizzQuestionComponent } from './components/quizz-question/quizz-questi
 import { QuizzResultComponent } from './components/quizz-result/quizz-result.component';
 import { QuizzRankingComponent } from './components/quizz-ranking/quizz-ranking.component';
 import { MemoryRegisterComponent } from './components/memory-register/memory-register.component';
+import { HangRegisterComponent } from './components/hang-register/hang-register.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: HomeComponent },
@@ -33,6 +34,7 @@ const routes: Routes = [
   { path: 'quizz-result', component: QuizzResultComponent },
   { path: 'quizz-ranking', component: QuizzRankingComponent },
   { path: 'memory-register', component: MemoryRegisterComponent },
+  { path: 'hang-register', component: HangRegisterComponent },
 ];
 
 @NgModule({
