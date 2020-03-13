@@ -3,12 +3,15 @@ import { MemoryCardService } from './memory-card.service';
 import { MemoryRankingService } from './memory-ranking.service';
 import { Router } from '@angular/router';
 import { Card } from '../entities/card.clss';
+import { HttpClient } from '@angular/common/http';
 // import { Level } from '../entities/level.class';
 
+const Url = 'http://127.0.0.1:8000/api/';
 @Injectable({
   providedIn: 'root'
 })
 export class MemoryGameService {
+
 
   cards: Card[] = [];
   activeCards: Card[] = [];
@@ -21,7 +24,7 @@ export class MemoryGameService {
 
   constructor( private cardService: MemoryCardService, private rankingService: MemoryRankingService,
     // tslint:disable-next-line: align
-    private router: Router) {
+    private router: Router, private http: HttpClient) {
     this.cards = this.cardService.getCards();
     }
 
@@ -129,4 +132,15 @@ export class MemoryGameService {
         // time: this.time,
       });
     }
+
+    registerParticipant(name: string, email: string, phone: string) {
+      const data = {
+        name,
+        email,
+        phone,
+      };
+      console.log('servicio', data);
+      return this.http.post( Url + 'register/memory', data);
+    }
+
 }
