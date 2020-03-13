@@ -19,8 +19,7 @@ export class TimerComponent implements OnInit {
   private secLeft = false;
   private counter;
   private nivel;
-  
-
+//para los niveles
   @Input() level:number;
   @Input() t_min:number;
   @Input() t_sec:number;
@@ -35,8 +34,8 @@ export class TimerComponent implements OnInit {
 
   ngOnInit() {
     if(this.level == 1){
-      this.min = 0;
-      this.sec = 3;
+      this.min = 1;
+      this.sec = 20;
     }
 
     if(this.level == 2){
@@ -124,7 +123,15 @@ export class TimerComponent implements OnInit {
     setTimeout(() => {
 
       // this.router.navigate(['/modal-cronometro']);
-      this.game.playAgains33();
+      if(this.level > 1){
+        // const newLocal = this.level;
+        // localStorage.setItem('level', this.newLocal);
+        localStorage.setItem('level', JSON.stringify(this.level));
+        this.game.playRegister();        
+      }else{
+        this.game.playAgains33();
+      }
+   
 
     }, 1000);
   }

@@ -36,7 +36,8 @@ export class MemoryRegisterComponent implements OnInit {
       (data: any) => {
         // localStorage.clear();
         localStorage.setItem('participant', JSON.stringify(data));
-        this.router.navigate(['/memory-playing']);
+        this.router.navigate(['/list-games']);
+        // this.router.navigate(['/memory-playing']);
       }
     );
   }

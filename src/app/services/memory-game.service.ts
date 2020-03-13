@@ -68,6 +68,11 @@ export class MemoryGameService {
       // this.rounds = 0;
       // this.isBoardLocked = false;
     }
+
+    playRegister(): void {
+      this.router.navigate(['memory-register']);
+    }
+    // pa
     // pasa salir a la lista de los juegos y reiniciar el juego
     playAgains(): void {
       this.router.navigate(['list-games']);
