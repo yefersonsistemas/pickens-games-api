@@ -36,6 +36,8 @@ import {
     MatGridListModule,
     MatListModule,
     MatProgressBarModule,
+    MatPaginatorModule,
+    MatSortModule
   ]
 })
 export class MaterialModule {}
