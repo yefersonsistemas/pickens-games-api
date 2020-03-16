@@ -36,6 +36,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 
 import { QuizzRankingComponent } from './components/quizz-ranking/quizz-ranking.component';
+import { TictactocBoardComponent } from './components/tictactoc-board/tictactoc-board.component';
 
 
 @NgModule({
@@ -67,7 +68,8 @@ import { QuizzRankingComponent } from './components/quizz-ranking/quizz-ranking.
     QuizzQuestionComponent,
     QuizzRegisterComponent,
     QuizzResultComponent,
-    QuizzRankingComponent
+    QuizzRankingComponent,
+    TictactocBoardComponent,
 
   ],
   imports: [

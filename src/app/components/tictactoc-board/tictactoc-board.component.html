@@ -1,0 +1,18 @@
+<div>
+    <mat-grid-list cols="12">
+        <div class="game-area">
+        <mat-grid-tile [colspan]="8">
+            <mat-grid-list class="tick-tack-grid" cols="3" >
+                <mat-grid-tile *ngFor="let block of ticService.blocks; let i = index; trackBy: trackByFn" (click)="playerClick(i)">
+                    <mat-icon clas></mat-icon>
+                </mat-grid-tile>
+            </mat-grid-list>
+        </mat-grid-tile>
+    </div>
+
+        <mat-grid-tile [colspan]="4">
+            <h1>hello</h1>
+        </mat-grid-tile>
+    </mat-grid-list>
+
+</div>
